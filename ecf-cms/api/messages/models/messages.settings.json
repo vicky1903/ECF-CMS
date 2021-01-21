@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "name": "messages",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "corp": {
+      "type": "richtext",
+      "required": true
+    },
+    "date_creation": {
+      "type": "date"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "sujets": {
+      "collection": "sujets",
+      "via": "messages",
+      "dominant": true
+    }
+  }
+}

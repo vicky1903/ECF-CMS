@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sujets",
+  "info": {
+    "name": "sujets",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 50
+    },
+    "date_creation": {
+      "type": "date",
+      "required": true,
+      "default": "2021-01-21T11:00:00.000Z",
+      "private": false
+    },
+    "user_crea": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "messages": {
+      "via": "sujets",
+      "collection": "messages"
+    }
+  }
+}
